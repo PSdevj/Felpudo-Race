@@ -35,10 +35,6 @@ public class ControllGame : MonoBehaviour
         return gameLigado;
     }
 
-
-
-
-
     public void MenuTutorial()
     {
         MenuTutorialPrincipal.SetActive(true);
