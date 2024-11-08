@@ -37,6 +37,7 @@ public class Spawn : MonoBehaviour
 
         Instantiate(objetosSpawns[objetoAleatorio], pontosSpawns[pontoAleatorio].position, Quaternion.Euler(0f, 0f, -0.04253413f));
 
+
         tempoAtualSpawns = tempoMaximoSpawns;
     }
 }

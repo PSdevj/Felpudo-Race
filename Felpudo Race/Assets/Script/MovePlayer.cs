@@ -9,6 +9,10 @@ public class MovePlayer : MonoBehaviour
     public Rigidbody2D corpoPlayer;
     public float velocidadePlayer;
 
+    public bool taNoChao;
+    public Transform detectaChao;
+    public LayerMask oQueEChao;
+    public int quantidadeDePulo = 1;
 
 
     void Start()
@@ -19,7 +23,18 @@ public class MovePlayer : MonoBehaviour
     void Update()
 
     {
+        movimentacaoPlayer();
+    }
+
+
+    public void movimentacaoPlayer()
+    {
         velocidadePlayer = Input.GetAxis("Horizontal") * 3.5f;
         corpoPlayer.velocity = new Vector2(velocidadePlayer, corpoPlayer.velocity.y);
+    }
+
+    public void puloPlayer()
+    {
+        
     }
 }
