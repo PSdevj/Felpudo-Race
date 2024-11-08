@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveAbacate : MonoBehaviour
+public class MovePera : MonoBehaviour
 {
-    //Código responsável pela velocidade do abacate(item)
+
+    //Código responsável pela velocidade da pera
     public float speed = 2f;
 
     // Start is called before the first frame update
@@ -16,8 +17,9 @@ public class MoveAbacate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.left * speed * Time.deltaTime);
+        transform.Translate(Vector3.right * speed * Time.deltaTime);
     }
+
 
 
 }

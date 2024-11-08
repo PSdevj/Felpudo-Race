@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class ControllGame : MonoBehaviour
 {
+    //Código responsável por controlar o jogo e manipular as cenas
 
     public bool gameLigado = false;
 
@@ -13,19 +14,24 @@ public class ControllGame : MonoBehaviour
     [SerializeField] private GameObject Menuprincipal;
     [SerializeField] private GameObject Menucredito;
     [SerializeField] private GameObject MenuTutorialPrincipal;
+    [SerializeField] private GameObject MenuVitoria;
+    [SerializeField] private GameObject MenuPausa;
     public GameObject telaGameOver;
 
     // Start is called before the first frame update
     void Start()
     {
-        gameLigado = false;
-        Time.timeScale = 0;
+        gameLigado = true;
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Pausar();
+        }
     }
 
 
@@ -40,6 +46,16 @@ public class ControllGame : MonoBehaviour
         MenuTutorialPrincipal.SetActive(true);
         Menuprincipal.SetActive(false);
         
+    }
+    public void Pausar()
+    {
+        MenuPausa.SetActive(true);
+        Time.timeScale = 0;
+    }
+    public void ReniciarPause()
+    {
+        MenuPausa.SetActive(false);
+        Time.timeScale = 1;
     }
 
     public void FecharMenuTutorial()
@@ -69,6 +85,13 @@ public class ControllGame : MonoBehaviour
         Time.timeScale = 0;
         gameLigado = false;
 
+    }
+
+    public void VitoriaPlayer()
+    {
+        MenuVitoria.SetActive(true);
+        Time.timeScale = 0;
+        gameLigado = false;
     }
 
     public void LoadScene(string nome)

@@ -20,7 +20,8 @@ public class VidaDoPlayer : MonoBehaviour
     {
         vidaAtual = vidaMaxima;
         barraDeVida.maxValue = vidaAtual;
-     
+
+        genJ = GameObject.FindGameObjectWithTag("GameController").GetComponent<ControllGame>();
     }
 
     // Update is called once per frame
@@ -31,15 +32,15 @@ public class VidaDoPlayer : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag =="Lesma")
+        if (collision.gameObject.tag == "Lesma")
         {
             vidaAtual--;
             barraDeVida.value = vidaAtual;
             Destroy(collision.gameObject);
 
-            if(vidaAtual <= 0)
+            if(vidaAtual <= 4)
             {
-                Debug.Log("GamePOver");
+                genJ.PersonagemMorreu();
             }
 
         }

@@ -1427,6 +1427,7 @@ MonoBehaviour:
   Menuprincipal: {fileID: 376996671}
   Menucredito: {fileID: 304981619}
   MenuTutorialPrincipal: {fileID: 498800760}
+  telaGameOver: {fileID: 0}
 --- !u!4 &1113776699
 Transform:
   m_ObjectHideFlags: 0

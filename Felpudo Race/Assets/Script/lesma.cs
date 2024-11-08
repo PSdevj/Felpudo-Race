@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class lesma : MonoBehaviour
 {
+
+    //Código responsável pela movimentação da lesma
     public float speed = 2f;
+    
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,5 +22,12 @@ public class lesma : MonoBehaviour
         transform.Translate(Vector3.left * speed * Time.deltaTime);
     }
 
-    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Pera")
+        {
+            Destroy(collision.gameObject);
+        }
+    }
+
 }

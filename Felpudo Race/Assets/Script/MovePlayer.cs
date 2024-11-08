@@ -9,21 +9,34 @@ public class MovePlayer : MonoBehaviour
     public Rigidbody2D corpoPlayer;
     public float velocidadePlayer;
 
-    public bool taNoChao;
-    public Transform detectaChao;
-    public LayerMask oQueEChao;
-    public int quantidadeDePulo = 1;
+    public GameObject laserPlayer;
+    public Transform localLaserPlayer;
+
+    public bool temEnergia;
+    public int energia = 10;
+    public float tempoDeEnergia = 0f;
+
+    public float tempoMaximoTiro;
+    public float tempoAtualTiro;
 
 
     void Start()
     {
         corpoPlayer = GetComponent<Rigidbody2D>();
-     
+        temEnergia = true;
+        tempoAtualTiro = tempoMaximoTiro;
+
     }
     void Update()
 
     {
         movimentacaoPlayer();
+   
+        if (tempoAtualTiro <= 0)
+        {
+            AtirarFruta();
+        }
+        tempoAtualTiro -= Time.deltaTime;
     }
 
 
@@ -37,4 +50,17 @@ public class MovePlayer : MonoBehaviour
     {
         
     }
+
+    public void AtirarFruta()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+        
+           Instantiate(laserPlayer, localLaserPlayer.position, localLaserPlayer.rotation);
+           tempoAtualTiro = tempoMaximoTiro;
+
+        }
+    }
+  
+
 }
