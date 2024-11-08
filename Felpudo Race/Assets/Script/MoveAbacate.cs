@@ -18,4 +18,6 @@ public class MoveAbacate : MonoBehaviour
     {
         transform.Translate(Vector3.left * speed * Time.deltaTime);
     }
+
+
 }

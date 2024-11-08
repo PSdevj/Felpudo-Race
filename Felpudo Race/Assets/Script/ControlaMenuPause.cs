@@ -2,18 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
-public class ControllGame : MonoBehaviour
+public class ControlaMenuPause : MonoBehaviour
 {
 
     public bool gameLigado = false;
 
-
-    [SerializeField] private GameObject Menuprincipal;
-    [SerializeField] private GameObject Menucredito;
-    [SerializeField] private GameObject MenuTutorialPrincipal;
-    public GameObject telaGameOver;
+    [SerializeField] private GameObject menuPause;
+    [SerializeField] private GameObject menuTutorial;
 
     // Start is called before the first frame update
     void Start()
@@ -28,53 +24,41 @@ public class ControllGame : MonoBehaviour
         
     }
 
-
-
     public bool EstadoDoJogo()
     {
         return gameLigado;
     }
 
+    public void MenuPause()
+    {
+        menuPause.SetActive(true);
+        Time.timeScale = 0;
+        gameLigado = false;
+    }
 
-
-
+    public void FecharMenuPause()
+    {
+        menuPause.SetActive(false);
+        Time.timeScale = 1;
+        gameLigado = true;
+    }
 
     public void MenuTutorial()
     {
-        MenuTutorialPrincipal.SetActive(true);
-        Menuprincipal.SetActive(false);
-        
-    }
-
-    public void FecharMenuTutorial()
-    {
-        Menuprincipal.SetActive(true);
-        MenuTutorialPrincipal.SetActive(false);
-    }
-
-
-    public void MenuCredito()
-    {
-        Menucredito.SetActive(true);
-        Menuprincipal.SetActive(false);
-
-    }
-    public void FecharCredito()
-    {
-        Menucredito.SetActive(false);
-        Menuprincipal.SetActive(true);
-
-    }
-
-
-    public void PersonagemMorreu()
-    {
-        telaGameOver.SetActive(true);
+        menuPause.SetActive(false);
+        menuTutorial.SetActive(true);
         Time.timeScale = 0;
         gameLigado = false;
 
     }
 
+    public void FecharTutorial()
+    {
+        menuTutorial.SetActive(false);
+        menuPause.SetActive(true);
+        Time.timeScale = 0;
+        gameLigado = false;
+    }
     public void LoadScene(string nome)
     {
         SceneManager.LoadScene(nome);

@@ -1126,7 +1126,7 @@ GameObject:
   - component: {fileID: 678322605}
   - component: {fileID: 678322607}
   - component: {fileID: 678322606}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "2. Cha\u2560\xE2o T"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1343,6 +1343,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.2
+--- !u!1 &779031989
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 779031990}
+  m_Layer: 0
+  m_Name: AtiradorFrut
+  m_TagString: Untagged
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &779031990
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779031989}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.96, y: -1.33, z: 0}
+  m_LocalScale: {x: 1.9033749, y: 1.9033749, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1464083621}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &849328639
 GameObject:
   m_ObjectHideFlags: 0
@@ -1769,6 +1800,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   corpoPlayer: {fileID: 1464083618}
   velocidadePlayer: 1
+  taNoChao: 0
+  detectaChao: {fileID: 1464083621}
+  oQueEChao:
+    serializedVersion: 2
+    m_Bits: 8
+  quantidadeDePulo: 1
 --- !u!50 &1464083618
 Rigidbody2D:
   serializedVersion: 4
@@ -1905,7 +1942,8 @@ Transform:
   m_LocalPosition: {x: -7.25, y: -3.74, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 779031990}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1464083622
@@ -1945,6 +1983,7 @@ MonoBehaviour:
   vidaAtual: 0
   barraDeVida: {fileID: 1916951330}
   spawn: {fileID: 0}
+  genJ: {fileID: 0}
 --- !u!114 &1464083624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2185,7 +2224,7 @@ GameObject:
   - component: {fileID: 1710158932}
   - component: {fileID: 1710158931}
   - component: {fileID: 1710158934}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "2. Cha\u2560\xE2o"
   m_TagString: "Ch\xE3o"
   m_Icon: {fileID: 0}
@@ -2331,7 +2370,7 @@ GameObject:
   - component: {fileID: 1724780009}
   - component: {fileID: 1724780011}
   - component: {fileID: 1724780010}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "2. Cha\u2560\xE2o F"
   m_TagString: Untagged
   m_Icon: {fileID: 0}

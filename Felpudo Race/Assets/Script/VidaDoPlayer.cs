@@ -12,13 +12,15 @@ public class VidaDoPlayer : MonoBehaviour
 
     public Spawn spawn;
 
+    public ControllGame genJ;
+
 
     // Start is called before the first frame update
     void Start()
     {
         vidaAtual = vidaMaxima;
         barraDeVida.maxValue = vidaAtual;
-
+     
     }
 
     // Update is called once per frame
@@ -34,6 +36,11 @@ public class VidaDoPlayer : MonoBehaviour
             vidaAtual--;
             barraDeVida.value = vidaAtual;
             Destroy(collision.gameObject);
+
+            if(vidaAtual <= 0)
+            {
+                Debug.Log("GamePOver");
+            }
 
         }
     }
