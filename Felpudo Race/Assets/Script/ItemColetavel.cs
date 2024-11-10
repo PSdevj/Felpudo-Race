@@ -31,7 +31,7 @@ public class ItemColetavel : MonoBehaviour
             Destroy(collision.gameObject);
             abacate++;
             ModTexto();
-            if (abacate == 1)
+            if (abacate == 10)
             {
                 Debug.Log("Vitória");
                 genJ.VitoriaPlayer();

@@ -20,6 +20,7 @@ public class VidaDoPlayer : MonoBehaviour
     {
         vidaAtual = vidaMaxima;
         barraDeVida.maxValue = vidaAtual;
+        barraDeVida.value = vidaAtual; // Atualiza o valor inicial da barra de vida
 
         genJ = GameObject.FindGameObjectWithTag("GameController").GetComponent<ControllGame>();
     }
@@ -38,8 +39,9 @@ public class VidaDoPlayer : MonoBehaviour
             barraDeVida.value = vidaAtual;
             Destroy(collision.gameObject);
 
-            if(vidaAtual <= 4)
+            if(vidaAtual <= 0)
             {
+                Destroy(gameObject);
                 genJ.PersonagemMorreu();
             }
 

@@ -2953,7 +2953,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a40d427b9fc1b64c90ed14a5a01458b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidaMaxima: 5
+  vidaMaxima: 1
   vidaAtual: 0
   barraDeVida: {fileID: 1916951330}
   spawn: {fileID: 0}
@@ -3437,7 +3437,6 @@ GameObject:
   - component: {fileID: 1710158933}
   - component: {fileID: 1710158932}
   - component: {fileID: 1710158931}
-  - component: {fileID: 1710158934}
   m_Layer: 3
   m_Name: "2. Cha\u2560\xE2o"
   m_TagString: "Ch\xE3o"
@@ -3559,18 +3558,6 @@ Transform:
   - {fileID: 678322605}
   m_Father: {fileID: 1622927173}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1710158934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1710158930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed1737971bf175f46b563f52f8367df6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1724780008
 GameObject:
   m_ObjectHideFlags: 0
