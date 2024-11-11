@@ -10,6 +10,7 @@ O jogo foi desenvolvido por dois discentes do curso de Jogos Digitais, Fernanda 
 
 # Mecânica
 O jogo tem jogabilidade e mecânica simples. Pressionando as teclas "D" e "A" o player anda para frente e para trás respectivamente. Ao preseionar o botão ESQUERDO do mouse, o player atira PERAS para destruir os inimigos e o Boss. 
+![MenuFel](https://github.com/user-attachments/assets/6f03e682-1cf7-44d5-ace6-841223cccfe5)
 
 # GamePlay
 Uma simples GamePlay pode ser encontrada no link https://www.youtube.com/watch?v=FT2OjcCYXLM 
