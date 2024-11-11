@@ -12,7 +12,8 @@ Os Assets foram disponibilizados pelo professor Murillo Boratto da disciplina de
 # Mecânica
   O jogo tem jogabilidade e mecânica simples. Pressionando as teclas "D" e "A" o player anda para frente e para trás respectivamente. Ao preseionar o botão ESQUERDO do mouse, o player atira PERAS para destruir os inimigos e o Boss. 
 
-![tutorial](https://github.com/user-attachments/assets/a26f48eb-eb4d-48db-8b85-dc57300921fd)
+
+![tutorial](https://github.com/user-attachments/assets/0ffc561c-6291-4dae-b8cb-a82836661899)
 
 # GamePlay
   Uma simples GamePlay pode ser encontrada no link https://www.youtube.com/watch?v=FT2OjcCYXLM 
