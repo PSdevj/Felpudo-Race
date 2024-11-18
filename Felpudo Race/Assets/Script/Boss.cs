@@ -7,26 +7,26 @@ public class Boss : MonoBehaviour
 {
     public Transform player; // Referência ao Transform do jogador que será perseguido
 
-    public float velocidade = 2f; // Velocidade de movimento do boss
-    public float limiteEsquerda = -5f; // Limite à esquerda
+    public float velocidade = 2f;
+    public float limiteEsquerda = -5f;
 
-    public float limiteDireita = 5f; // Limite à direita
+    public float limiteDireita = 5f;
     private bool movendoParaDireita = true; // Controla a direção do movimento
 
-    private Vector3 screenCenter;
-    private Vector3 originalScale;
+    private Vector3 screenCenter; // Guarda a posição central da tela.
+    private Vector3 originalScale; // Guarda a escala original do boss.
 
     public GameObject projectilePrefab; // Prefab do projétil
     public Transform firePoint; // Ponto de origem dos projéteis
 
-    public float shootInterval = 2f; // Intervalo de tempo entre disparos
-    public float projectileSpeed = 5f; // Velocidade do projétil
+    public float shootInterval = 2f; 
+    public float projectileSpeed = 5f; 
 
-    public Slider barraDeVida;
+    public Slider barraDeVida; // Referência para a barra de vida na UI.
     public int vidaAtual;
     public int vidaMaxima;
 
-    private ControllGame gameController; // Adicione essa linha
+    private ControllGame gameController; // Controlador de jogo para checar a vitória.
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +34,7 @@ public class Boss : MonoBehaviour
         // Encontra o jogador na cena
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        // Inicia a função de disparo repetidamente
+        // Configura o disparo automático a cada `shootInterval` segundos
         InvokeRepeating("ShootProjectile", 2f, shootInterval);
 
         //Calcula a posição central da tela em coordenadas do mundo
@@ -43,11 +43,12 @@ public class Boss : MonoBehaviour
         // Guarda a escala original do boss
         originalScale = transform.localScale;
 
+        // Inicializa os valores de vida.
         vidaAtual = vidaMaxima;
         barraDeVida.maxValue = vidaAtual;
         barraDeVida.value = vidaAtual; // Atualiza o valor inicial da barra de vida
 
-        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<ControllGame>(); // Adicione essa linha
+        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<ControllGame>();  // Busca o controlador de jogo.
     }
 
     // Update is called once per frame

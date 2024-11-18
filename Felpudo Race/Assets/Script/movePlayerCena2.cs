@@ -33,9 +33,10 @@ public class movePlayerCena2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        corpoPlayer = GetComponent<Rigidbody2D>();
-        temEnergia = true;
-        tempoAtualTiro = tempoMaximoTiro;
+        corpoPlayer = GetComponent<Rigidbody2D>(); // Inicializa o Rigidbody2D.
+        temEnergia = true; // Define que o player começa com energia.
+        tempoAtualTiro = tempoMaximoTiro; // Inicializa o temporizador de tiro.
+
 
         // Inicializa o componente Animator
         animator = GetComponent<Animator>();
@@ -43,9 +44,10 @@ public class movePlayerCena2 : MonoBehaviour
         // Armazena a escala original do player quando o jogo começa
         originalScale = transform.localScale;
 
+        // Inicializa a vida do player e atualiza a barra de vida.
         vidaAtual = vidaMaxima;
         barraDeVida.maxValue = vidaAtual;
-        barraDeVida.value = vidaAtual; // Atualiza o valor inicial da barra de vida
+        barraDeVida.value = vidaAtual; 
     }
 
     // Update is called once per frame
@@ -54,16 +56,17 @@ public class movePlayerCena2 : MonoBehaviour
         movimentacaoPlayer();
         puloPlayer(); // Chama o método de pulo
 
-
+        // Verifica se o tempo de recarga do tiro acabou e permite atirar.
         if (tempoAtualTiro <= 0)
         {
             AtirarFruta();
         }
-        tempoAtualTiro -= Time.deltaTime;
+        tempoAtualTiro -= Time.deltaTime; // Diminui o contador com o tempo passado.
 
     }
     public void movimentacaoPlayer()
     {
+        // Controla a velocidade horizontal com base na entrada do jogador.
         velocidadePlayer = Input.GetAxis("Horizontal") * 3.5f;
         corpoPlayer.velocity = new Vector2(velocidadePlayer, corpoPlayer.velocity.y);
 
@@ -90,7 +93,7 @@ public class movePlayerCena2 : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Chão") || collision.gameObject.CompareTag("plataforma")) // Certifique-se de que o chão tem a tag "Chao"
+        if (collision.gameObject.CompareTag("Chão") || collision.gameObject.CompareTag("plataforma")) 
         {
             estaNoChao = true;
         }
@@ -115,6 +118,8 @@ public class movePlayerCena2 : MonoBehaviour
             tempoAtualTiro = tempoMaximoTiro;
         }
     }
+
+    // Detecta quando o player entra em um trigger com a tag "Banana".
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Banana"))
