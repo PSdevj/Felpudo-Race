@@ -2953,7 +2953,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a40d427b9fc1b64c90ed14a5a01458b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidaMaxima: 1
+  vidaMaxima: 3
   vidaAtual: 0
   barraDeVida: {fileID: 1916951330}
   spawn: {fileID: 0}
